@@ -1,0 +1,29 @@
+# *******************************************************************************
+# @file    Kconfig
+# @brief   add the Kconfig entry of all the device driver here
+# @SPDX-License-Identifier: Apache-2.0
+# *******************************************************************************
+
+menuconfig TEMPLATE
+    bool "enable the Template Driver"
+    
+if TEMPLATE
+
+    config TEMPLATE_INIT_PRIORITY
+        int "api init priority"
+        default 90
+        help
+            API initialization priority of the api drivers
+
+    config TEMPLATE_LOG_LEVEL
+        int "Log Level"
+        default 1
+        help
+            Log level of the api driver
+            0 = NO LOG |
+            1 = ERROR |
+            2 = WARNING | 
+            3 = INFO | 
+            4 = DEBUG
+
+rsource "template/Kconfig"

@@ -1,0 +1,8 @@
+# *******************************************************************************
+# @file     Kconfig
+# @brief    Kconfig file for Zephyr Module, this is the starting point to load 
+#           the rest of the Kconfigs of the module
+# @SPDX-License-Identifier: Apache-2.0
+# *******************************************************************************
+
+rsource "drivers/Kconfig"

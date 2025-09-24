@@ -1,0 +1,36 @@
+#******************************************************************************
+# @file    .yaml
+# @brief   
+# @SPDX-License-Identifier: Apache-2.0
+#*******************************************************************************
+
+description: Devicetree Bindings for Zephyr Example Module
+
+compatible: "zephyr,zephyr-example-module"
+
+include: 
+  - base.yaml
+  - uart-device.yaml
+  - i2c-device.yaml
+
+properties:
+  
+  # only for I2C
+  reg:
+    description: "I2C address of the connected Device" 
+    required: true
+
+  template-gpios:
+    type: phandle-array
+    required: false
+    description: Template GPIO pins for the Zephyr Example Module.
+
+  template-int:
+    type: int
+    required: false
+    description: Template Text
+    enum:
+      - 0
+      - 1
+      - 2
+      - 3

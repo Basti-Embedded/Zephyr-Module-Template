@@ -1,0 +1,11 @@
+# ******************************************************************************
+# @file    module.yml
+# @author  Sebastian Schmidt 3B Scientific
+# @brief   Module File for Zephyr Project RTOS
+# ******************************************************************************
+
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    dts_root: .
