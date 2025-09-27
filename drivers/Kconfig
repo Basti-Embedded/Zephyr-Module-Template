@@ -27,3 +27,5 @@ if TEMPLATE
             4 = DEBUG
 
 rsource "template/Kconfig"
+
+endif
