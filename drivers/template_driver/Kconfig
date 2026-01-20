@@ -1,0 +1,19 @@
+# @file    Kconfig
+# @brief   Kconfig file for a Zephyr Driver
+
+menuconfig TEMPLATE_DRIVER
+	bool "Enable Template Driver"
+
+if TEMPLARE_DRIVER
+
+module = TEMPLATE_DRIVER
+module-str = "TEMPLATE_DRIVER"
+source "subsys/logging/Kconfig.template.log_config"
+
+config TEMPLATE_DRIVER_INIT_PRIORITY
+	int "template driver init priority"
+	default 90
+	help
+	  template driver initialization priority.
+
+endif # TEMPLATE_DRIVER

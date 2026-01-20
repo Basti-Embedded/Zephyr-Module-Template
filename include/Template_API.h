@@ -1,56 +1,46 @@
-/******************************************************************************
-* @file    Template_API.h
-* @brief   API 
-* @SPDX-License-Identifier: Apache-2.0
-*******************************************************************************/
+/*
+ * @file    template_api.h
+ * @brief   API jeader file
+ * @version 1.0
+ * */
 
-#ifndef template_H
-#define template_H
+#ifndef TEMPLATE_API_H
+#define TEMPLATE_API_H
 
-//======================================================================
-// ANCHOR - INCLUDES
-//======================================================================
+/* INCLUDE */
 
 #include <zephyr/device.h>
 #include <zephyr/devicetree.h>
 
-//======================================================================
-// ANCHOR - DEFINES
-//======================================================================
+#include <stdint.h>
 
-//======================================================================
-// ANCHOR - TYPEDEFS
-//======================================================================
+/* DEFINES */
 
-typedef enum 
-{
-    TEMPLATE_OK,
-}template_t;
+/* DATA TYPES */
 
-typedef void (*set_value_t)(const struct device *dev);
+/* FUNCTION DECLARATIONS */
 
-__subsystem struct template_api
-{
-    set_value_t set_value;
+typedef int (*get_data_t)(const struct device *dev);
+
+/* API STRUCTURE */
+
+__subsystem struct template_api {
+    get_data_t get_data;
 };
 
-//======================================================================
-// ANCHOR - API FUNCTION DECLARATIONS
-//======================================================================
+/* FUNCTIONS */
 
-/**********************************************************
- * @brief 
- * @param[in] 
- * @retval 
- **********************************************************/
-__syscall int template_set_value(const struct device *dev);
-static inline void template_set_value(const struct device *dev)
+/*
+ * @brief api function
+ * @param[in] dev pointer to the device structure
+ * @retval returns 0 on success, negative error code on failure
+ * */
+__syscall int TEMPLATE_get_data(const struct device *dev);
+static inline int TEMPLATE_get_data(const struct device *dev)
 {
-	const struct template_api *api = (const struct template_api *)dev->api;
-	return api->set_value(dev);
+    const struct template_api *api = (const struct template_api *)dev->api;
+    return api->get_data(dev);
 }
 
-#endif // template_H
-//======================================================================
-//  EOF
-//======================================================================
+#endif // TEMPLATE_API_H
+/* EOF */

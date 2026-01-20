@@ -1,7 +1,0 @@
-# *******************************************************************************
-# @file     Kconfig
-# @brief    add all device driver specific Kconfigs here 
-# @SPDX-License-Identifier: Apache-2.0
-# *******************************************************************************
-
-rsource "Kconfig.Template"

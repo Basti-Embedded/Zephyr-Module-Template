@@ -1,1 +1,15 @@
+# editors
+.vscode
+*.code-workspace
+*.swp
+*~
+AGENTS.md
+compile_commands.json
 
+# python
+.venv
+
+# build
+/build*
+/app/build*
+twister-out*
