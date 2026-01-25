@@ -9,7 +9,7 @@
 #include <zephyr/device.h>
 #include <zephyr/devicetree.h>
 #include <zephyr/kernel.h>
-
+#include <zephyr/logging/log.h>
 #include <sys/errno.h>
 
 #include "template_api.h"
@@ -19,6 +19,8 @@
 #endif
 
 /* DEFINES */
+
+LOG_MODULE_REGISTER(template_device);
 
 /* DATA TYPES */
 
